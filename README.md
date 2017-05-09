@@ -166,8 +166,8 @@ In a nutshell Memory spaces are categorized like this.
 
 Young generation
 ----------------
-Eden space 
-S0(survivor space 0)
+Eden space <br>
+S0(survivor space 0)<br>
 S1(survivor space 1)
 
 Old generation
