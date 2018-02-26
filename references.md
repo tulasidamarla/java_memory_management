@@ -44,7 +44,7 @@ collected when GC is run. Here is the code to demonstrate both the behaviors.
 Usage of References
 -------------------
 WeakReferences are often used in WeakHashMap. weak references are used to associate meta data with another type. For ex, 
-if a class if final, we cannot additional data/behavior to it. It is possible to do that using WeakHashMap and WeakReference.
+if a class if final, we cannot add additional data/behavior to it. It is possible to do that using WeakHashMap and WeakReference.
 
 SoftReferences can be used for caching. If an object is expensive to create or to get from remote location this can be referenced
 through soft reference. The strong reference can be set to null but if the object is needed later it can be loaded from SoftReference.
