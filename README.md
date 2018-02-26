@@ -202,7 +202,7 @@ Major GC is triggered when tenured space(or old generation) is full.
 With Major GC, memory gets copied from young generation to old generation. This is called promotion. 
 This promotion happens in two scenarios.
 
-1)If survivor space is full because objects that survive Minor GC from Eden space cannot be moved to survivor space.
+1)If survivor space is full because objects that survive Minor GC from Eden space cannot be moved to survivor space.  
 2)If objects in survivor space are survived certain no of GC's then they will be promoted to old generation.
 
 Major GC is slower than Minor GC because it runs on large section of the heap. It should run less frequently.
@@ -226,10 +226,10 @@ With TLAB, each thread gets its own buffer in Eden space and threads can only al
 
 Live roots
 ----------
-A live root is a reference to an object from one of the following
-1)stack frame : Stack represents the live running of an application. This is the stack across all threads. 
-Any references from variables on stack frame represent objects must be live references.
-2)static variables: Any static variables ref to an object and they are kept live.
+A live root is a reference to an object from one of the following  
+1)stack frame : Stack represents the live running of an application. This is the stack across all threads.  
+Any references from variables on stack frame represent objects must be live references.  
+2)static variables: Any static variables ref to an object and they are kept live.  
 3)Others like JNI or synchronization monitors: Objects that reference Java native interface or 
 if we use synchronization monitors for locking they are all considered as live references.
 
@@ -250,19 +250,19 @@ i.e. If any change happens in the 512 bytes of memory, then cardtable is updated
 
 Minor GC stpes
 --------------
-1)scan for unused objects
-2)scan for references from rootset
+1)scan for unused objects  
+2)scan for references from rootset  
 3)Instead of scanning old generation for references old to young, cardtable is scanned, looks for any changed data 
 and that piece of memory is loaded and any references in that memory are followed and marked as in use.
 
 Java GC's
 ---------
-Java has different GC's. We can choose one of these by passing jvm arguments like below.
--XX:+UseSerialGC --> Serial generational collector.
--XX:+UseParallelGC --> Parallel for young space, serial for old space generational collector.
--XX:+UseParallelOldGC --> parallel for both young and old spaces.
--XX:+UseConcMarkSweepGC(-XX:-UseParNewGC) --> Concurrent Mark sweep with serial young space collector.
--XX:+UseConcMarkSweepGC(+XX:-UseParNewGC) --> Concurrent Mark sweep with parallel young space collector.
+Java has different GC's. We can choose one of these by passing jvm arguments like below.  
+-XX:+UseSerialGC --> Serial generational collector.  
+-XX:+UseParallelGC --> Parallel for young space, serial for old space generational collector.  
+-XX:+UseParallelOldGC --> parallel for both young and old spaces.  
+-XX:+UseConcMarkSweepGC(-XX:-UseParNewGC) --> Concurrent Mark sweep with serial young space collector.  
+-XX:+UseConcMarkSweepGC(+XX:-UseParNewGC) --> Concurrent Mark sweep with parallel young space collector.  
 -XX:+UseG1GC --> G1 garbage collector.
 
 Serial GC
