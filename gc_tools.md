@@ -125,7 +125,7 @@ In my machine it produced the following o/p:
   S0     S1     E      O      M     CCS    YGC     YGCT    FGC    FGCT     GCT    LGCC                 GCC  
   0.00  99.73   0.00  98.68  55.61  58.45   2329  498.687   108   38.777  537.464 Allocation Failure   Ergonomics
   
-Note: From the above it is understood that LGCC is because of allocation failure and GCC is for Ergonomics(for efficiency reasons).
+Note: From the above it is understood that LGCC(Last garbage collection cause) is because of allocation failure and GCC(current garbage collection cause) is for Ergonomics(for efficiency reasons).
 
 gccapacity
 ----------
