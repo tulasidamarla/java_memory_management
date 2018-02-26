@@ -4,7 +4,7 @@ We need to understand some basics about Java's Garbage collection(GC) before mem
 Ans:<br>
 1)once object is created, no need to remember to delete. whenever an object has no live references to it GC will clear the memory allocated for it. If we don't do this in other languages like c,c++ etc, it will cause memory leak.<br>
 2)use and forget, no need to ask should I delete. For ex, an object is returned from a method like this: Account acc=getAccount(). Who should clear the memory allocated for it. Is it the caller or the one who created it. It may end up in a situation where both ignore to free the object, which may cause issues like null pointer exception etc and it is very hard to debug. In java, you don't need to worry about it.<br>
-3)Use with confidence. As long as there is a life refernce to an object, there is no way that garbage collector can free up that memory.In other languages like c or c++, a thread in the background may free up the memory allocated for an object, which may cause null pointer issues at runtime.<br>
+3)Use with confidence. As long as there is a live refernce to an object, there is no way that garbage collector can free up that memory.In other languages like c or c++, a thread in the background may free up the memory allocated for an object, which may cause null pointer issues at runtime.<br>
 
 The GC promise<br>
 --------------<br>
